@@ -2,7 +2,7 @@
 FROM python@sha256:55221704bcc5432f978bc5184d58f54c93ad25313363a1d0db20606a4cf2aef7
 
 # Setup Poetry
-ENV POETRY_VERSION=1.3.2
+ENV POETRY_VERSION=1.5.1
 RUN python3 -m pip install "poetry==$POETRY_VERSION"
 ENV PATH=$PATH:/root/.poetry/bin
 
