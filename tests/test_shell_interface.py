@@ -6,7 +6,7 @@ import pytest
 from hypothesis import example, given
 from hypothesis import strategies as st
 
-from butter_backup import shell_interface as sh
+import shell_interface as sh
 
 echoable_text = st.text(
     alphabet=st.characters(blacklist_categories="C"), min_size=1
