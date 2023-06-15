@@ -8,6 +8,7 @@ from hypothesis import strategies as st
 
 import shell_interface as sh
 
+environment_variable_names = st.text(alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ_", min_size=1)
 echoable_text = st.text(
     alphabet=st.characters(blacklist_categories="C"), min_size=1
 ).map(str.strip)
@@ -21,6 +22,15 @@ def test_run_cmd_succeeds() -> None:
 def test_run_cmd_fails() -> None:
     with pytest.raises(CalledProcessError):
         sh.run_cmd(cmd=["false"])
+
+
+@given(environment=st.dictionaries(environment_variable_names, echoable_text))
+def test_run_cmd_forwards_env(environment) -> None:
+    proc = sh.run_cmd(cmd=["env"], capture_output=True, env=environment)
+    stdout = proc.stdout.decode()
+    assert proc.returncode == 0
+    assert all(cur_var in stdout for cur_var in environment)
+    assert all(cur_val in stdout for cur_val in environment.values())
 
 
 @given(message=echoable_text)
