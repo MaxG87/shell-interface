@@ -4,14 +4,8 @@ FROM python@sha256:55221704bcc5432f978bc5184d58f54c93ad25313363a1d0db20606a4cf2a
 # Provide excecutables
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && \
-    apt install -y make python3 python3-pip && \
+    apt install -y make python3 python3-poetry && \
     apt autoclean
-
-# Setup Poetry
-ENV POETRY_VERSION=1.3.2
-RUN python3 -m pip install "poetry==$POETRY_VERSION"
-ENV PATH=$PATH:/root/.poetry/bin
-
 
 # Setup production dependencies
 WORKDIR /project
