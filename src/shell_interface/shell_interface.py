@@ -9,6 +9,8 @@ from typing import List, Optional, Union
 
 try:
     from loguru import logger  # type: ignore[import, unused-ignore]
+
+    logger.disable("shell_interface")
 except ModuleNotFoundError:
     logger = SimpleNamespace()  # type: ignore[assignment, unused-ignore]
     logger.debug = lambda msg: None  # type: ignore[assignment, unused-ignore]
