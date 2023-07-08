@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from subprocess import CalledProcessError
-
 import pytest
 from hypothesis import example, given
 from hypothesis import strategies as st
@@ -52,12 +50,12 @@ def test_pipe_pass_cmd_to_cmd() -> None:
 def test_pipe_pass_cmd_to_cmd_breaks_on_failing_pass_cmd() -> None:
     pass_cmd = "false"
     real_command: sh.StrPathList = ["true"]
-    with pytest.raises(CalledProcessError):
+    with pytest.raises(sh.ShellInterfaceError):
         sh.pipe_pass_cmd_to_real_cmd(pass_cmd, real_command)
 
 
 def test_pipe_pass_cmd_to_cmd_breaks_on_failing_real_cmd() -> None:
     pass_cmd = "echo Hallo Welt"
     real_command: sh.StrPathList = ["false"]
-    with pytest.raises(CalledProcessError):
+    with pytest.raises(sh.ShellInterfaceError):
         sh.pipe_pass_cmd_to_real_cmd(pass_cmd, real_command)

@@ -49,8 +49,15 @@ def pipe_pass_cmd_to_real_cmd(
     pass_cmd: str, command: StrPathList
 ) -> subprocess.CompletedProcess[bytes]:
     logger.debug(f"Shell-Befehl ist `{command}`.")
-    pwd_proc = subprocess.run(pass_cmd, stdout=subprocess.PIPE, shell=True, check=True)
-    completed_process = subprocess.run(command, input=pwd_proc.stdout, check=True)
+    try:
+        pwd_proc = subprocess.run(
+            pass_cmd, stdout=subprocess.PIPE, shell=True, check=True
+        )
+        completed_process = subprocess.run(command, input=pwd_proc.stdout, check=True)
+    except subprocess.CalledProcessError as e:
+        errmsg = f"Shell-Befehl `{command}` ist fehlgeschlagen."
+        logger.error(errmsg)
+        raise ShellInterfaceError(errmsg) from e
     return completed_process
 
 
