@@ -33,6 +33,38 @@ def run_cmd(
     env: Optional[dict[str, str]] = None,
     capture_output: bool = False,
 ) -> subprocess.CompletedProcess[bytes]:
+    """
+    Run provided command in shell
+
+    This function will run the provided command in a shell. The command must be
+    provided as a list of tokens.
+
+    The main difference to using `subprocess.run` directly is that this function
+    checks the return code of the command by default, while `subprocess.run`
+    does not. If a non-zero return code is encountered, a `ShellInterfaceError`
+    is raised.
+
+    Parameters:
+    -----------
+    cmd
+        command to run in shell
+    env
+        environment variables to set for the command; if `None`, the current
+        environment is used
+    capture_output
+        whether to capture the output of the command; if `True`, the output is
+        returned as part of the `CompletedProcess` object
+
+    Returns:
+    --------
+    subprocess.CompletedProcess[bytes]
+        object containing information about the completed process
+
+    Raises:
+    -------
+    ShellInterfaceError
+        if the command returns a non-zero return code
+    """
     if env is None:
         env = dict(os.environ)
     logger.debug(f"Shell-Befehl ist `{cmd}`.")
@@ -48,6 +80,34 @@ def run_cmd(
 def pipe_pass_cmd_to_real_cmd(
     pass_cmd: str, command: StrPathList
 ) -> subprocess.CompletedProcess[bytes]:
+    """
+    Pipe result of first command to second command
+
+    This function will run the first command in a shell and pipe its output to
+    the second command. The first command must be provided as a string, while
+    the second command must be provided as a list of tokens.
+
+    The return code of both commands is checked. If a non-zero return code is
+    encountered, a `ShellInterfaceError` is raised.
+
+    Parameters:
+    -----------
+    pass_cmd
+        command to run in shell and whose output is piped to the second command
+    command
+        command to run in shell and whose input is piped from the first command
+
+    Returns:
+    --------
+    subprocess.CompletedProcess[bytes]
+        object containing information about the completed process of the second
+        command
+
+    Raises:
+    -------
+    ShellInterfaceError
+        if either of the commands returns a non-zero return code
+    """
     logger.debug(f"Shell-Befehl ist `{command}`.")
     try:
         pwd_proc = subprocess.run(
