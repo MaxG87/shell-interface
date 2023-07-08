@@ -8,10 +8,12 @@ from types import SimpleNamespace
 from typing import List, Optional, Union
 
 try:
-    from loguru import logger  # type: ignore[import]
+    from loguru import logger  # type: ignore[import, unused-ignore]
+
+    logger.disable("shell_interface")
 except ModuleNotFoundError:
-    logger = SimpleNamespace()
-    logger.debug = lambda msg: None
+    logger = SimpleNamespace()  # type: ignore[assignment, unused-ignore]
+    logger.debug = lambda msg: None  # type: ignore[assignment, unused-ignore]
 
 _CMD_LIST = Union[List[str], List[Path], List[Union[str, Path]]]
 _LISTS_OF_CMD_LIST = Union[
