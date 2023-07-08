@@ -4,9 +4,14 @@ import getpass
 import os
 import subprocess
 from pathlib import Path
+from types import SimpleNamespace
 from typing import List, Optional, Union
 
-from loguru import logger
+try:
+    from loguru import logger  # type: ignore[import]
+except ModuleNotFoundError:
+    logger = SimpleNamespace()
+    logger.debug = lambda msg: None
 
 _CMD_LIST = Union[List[str], List[Path], List[Union[str, Path]]]
 _LISTS_OF_CMD_LIST = Union[
