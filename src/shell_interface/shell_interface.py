@@ -14,6 +14,7 @@ try:
 except ModuleNotFoundError:
     logger = SimpleNamespace()  # type: ignore[assignment, unused-ignore]
     logger.debug = lambda msg: None  # type: ignore[assignment, unused-ignore]
+    logger.error = lambda msg: None  # type: ignore[assignment, unused-ignore]
 
 _CMD_LIST = Union[List[str], List[Path], List[Union[str, Path]]]
 _LISTS_OF_CMD_LIST = Union[
@@ -22,7 +23,7 @@ _LISTS_OF_CMD_LIST = Union[
 StrPathList = List[Union[str, Path]]
 
 
-class ShellInterfaceError(ValueError):
+class ShellInterfaceError(RuntimeError):
     pass
 
 
@@ -35,7 +36,12 @@ def run_cmd(
     if env is None:
         env = dict(os.environ)
     logger.debug(f"Shell-Befehl ist `{cmd}`.")
-    result = subprocess.run(cmd, capture_output=capture_output, check=True, env=env)
+    try:
+        result = subprocess.run(cmd, capture_output=capture_output, check=True, env=env)
+    except subprocess.CalledProcessError as e:
+        errmsg = f"Shell-Befehl `{cmd}` ist fehlgeschlagen."
+        logger.error(errmsg)
+        raise ShellInterfaceError(errmsg) from e
     return result
 
 

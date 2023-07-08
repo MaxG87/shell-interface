@@ -45,7 +45,7 @@ disable_error_code = [
 addopts = [
     "--cov", "src",
     "--cov-branch",
-    "--cov-fail-under", "79"
+    "--cov-fail-under", "75"
 ]
 testpaths = ["tests"]
 

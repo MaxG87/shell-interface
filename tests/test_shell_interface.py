@@ -20,7 +20,7 @@ def test_run_cmd_succeeds() -> None:
 
 
 def test_run_cmd_fails() -> None:
-    with pytest.raises(CalledProcessError):
+    with pytest.raises(sh.ShellInterfaceError):
         sh.run_cmd(cmd=["false"])
 
 
