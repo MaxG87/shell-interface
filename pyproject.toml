@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "shell-interface"
-version = "0.10.0"
+version = "0.11.0"
 description = "Helpful and convenient utilities to interact with UNIX shells"
 authors = ["Max Görner <max@familie-goerner.eu>"]
 license = "GPL-3.0-or-later"
