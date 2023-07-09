@@ -56,6 +56,6 @@ def test_pipe_pass_cmd_to_cmd_breaks_on_failing_pass_cmd() -> None:
 
 def test_pipe_pass_cmd_to_cmd_breaks_on_failing_real_cmd() -> None:
     pass_cmd = "echo Hallo Welt"
-    real_command: sh.StrPathList = ["false"]
+    real_command = ["false"]
     with pytest.raises(sh.ShellInterfaceError):
         sh.pipe_pass_cmd_to_real_cmd(pass_cmd, real_command)

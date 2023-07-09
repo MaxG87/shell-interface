@@ -16,11 +16,8 @@ except ModuleNotFoundError:
     logger.debug = lambda msg: None  # type: ignore[assignment, unused-ignore]
     logger.error = lambda msg: None  # type: ignore[assignment, unused-ignore]
 
-_CMD_LIST = Union[List[str], List[Path], List[Union[str, Path]]]
-_LISTS_OF_CMD_LIST = Union[
-    List[List[str]], List[List[Path]], List[List[Union[str, Path]]]
-]
 StrPathList = List[Union[str, Path]]
+_CMD_LIST = Union[List[str], List[Path], StrPathList]
 
 
 class ShellInterfaceError(RuntimeError):
@@ -78,7 +75,7 @@ def run_cmd(
 
 
 def pipe_pass_cmd_to_real_cmd(
-    pass_cmd: str, command: StrPathList
+    pass_cmd: str, command: _CMD_LIST
 ) -> subprocess.CompletedProcess[bytes]:
     """
     Pipe result of first command to second command
