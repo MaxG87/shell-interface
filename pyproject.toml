@@ -32,8 +32,6 @@ enable_error_code = [
     "possibly-undefined"
 ]
 strict = true
-allow_incomplete_defs = true
-allow_untyped_defs = true
 
 
 [[tool.mypy.overrides]]
