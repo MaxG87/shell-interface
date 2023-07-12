@@ -23,7 +23,7 @@ def test_run_cmd_fails() -> None:
 
 
 @given(environment=st.dictionaries(environment_variable_names, echoable_text))
-def test_run_cmd_forwards_env(environment) -> None:
+def test_run_cmd_forwards_env(environment: dict[str, str]) -> None:
     proc = sh.run_cmd(cmd=["env"], capture_output=True, env=environment)
     stdout = proc.stdout.decode()
     assert proc.returncode == 0
