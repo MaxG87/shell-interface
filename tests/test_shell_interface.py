@@ -8,7 +8,7 @@ import shell_interface as sh
 
 environment_variable_names = st.text(alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ_", min_size=1)
 echoable_text = st.text(
-    alphabet=st.characters(blacklist_categories="C"), min_size=1
+    alphabet=st.characters(blacklist_categories={"C"}), min_size=1
 ).map(str.strip)
 
 
