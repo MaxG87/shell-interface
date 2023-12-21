@@ -742,5 +742,5 @@ logging = ["loguru"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = ">=3.8.1,<3.12"
-content-hash = "7817231e19a529a69ba11d5b42be6673d58e1f13942ea0244980c37f018d26e0"
+python-versions = ">=3.8.1,<3.13"
+content-hash = "c2506b5eb751348b1aea7bab64edb19728b69f6e7828e50ffb364559229ed8eb"
