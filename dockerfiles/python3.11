@@ -8,7 +8,7 @@ ENV PATH=$PATH:/root/.poetry/bin
 
 # Setup production dependencies
 WORKDIR /project
-COPY pyproject.toml poetry.lock ./
+COPY pyproject.toml poetry.lock README.md ./
 RUN poetry install
 
 # Install project
