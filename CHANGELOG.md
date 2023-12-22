@@ -6,7 +6,6 @@
 ### Features
 
 * Add Python 3.12 as supported version ([0cab641](https://github.com/MaxG87/shell-interface/commit/0cab641a57d372c97152b8a53f24e5a14e26708a))
-* Add Python 3.12 as supported version ([d7f3661](https://github.com/MaxG87/shell-interface/commit/d7f366127c56270ba32e95dfecc313f7f8256bef))
 
 
 ### Documentation
