@@ -9,10 +9,12 @@ RUN apt update && \
 
 # Setup production dependencies
 WORKDIR /project
-COPY pyproject.toml poetry.lock README.md ./
+COPY pyproject.toml poetry.lock ./
 RUN poetry install
 
 # Install project
+# README is required for poetry to install the project.
+COPY README.md ./
 COPY src/ src/
 RUN poetry install
 
