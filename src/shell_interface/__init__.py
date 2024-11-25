@@ -11,10 +11,10 @@ from .shell_interface import (
 
 __version__ = metadata.version(__name__)
 __all__ = [
-    "run_cmd",
     "ShellInterfaceError",
-    "pipe_pass_cmd_to_real_cmd",
     "StrPathList",
-    "get_user",
     "get_group",
+    "get_user",
+    "pipe_pass_cmd_to_real_cmd",
+    "run_cmd",
 ]
