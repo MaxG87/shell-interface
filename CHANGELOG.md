@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.0](https://github.com/MaxG87/shell-interface/compare/v0.14.0...v0.15.0) (2025-02-04)
+
+
+### Miscellaneous Chores
+
+* release v0.15.0 ([bd5bfcc](https://github.com/MaxG87/shell-interface/commit/bd5bfcc8238268cc7c8d3c69af47f37fed175020))
+
 ## [0.14.0](https://github.com/MaxG87/shell-interface/compare/v0.13.0...v0.14.0) (2024-11-25)
 
 
