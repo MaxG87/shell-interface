@@ -6,7 +6,7 @@ authors = [{name = "Max Görner", email = "5477952+MaxG87@users.noreply.github.c
 repository = "https://github.com/MaxG87/shell-interface"
 readme = "README.md"
 license = "GPL-3.0-or-later"
-requires-python = ">=3.9,<3.14"
+requires-python = ">=3.9"
 dependencies = []
 
 [project.optional-dependencies]
