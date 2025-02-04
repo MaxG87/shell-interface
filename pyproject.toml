@@ -7,12 +7,25 @@ repository = "https://github.com/MaxG87/shell-interface"
 readme = "README.md"
 license = "GPL-3.0-or-later"
 requires-python = ">=3.9,<3.14"
-dependencies = [
-    "loguru (>=0.7.2,<1.0.0)"
-]
+dependencies = []
 
 [project.optional-dependencies]
-logging = ["loguru"]
+logging = [
+    "loguru",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "hypothesis>=6.125.1",
+    "jedi>=0.19.2",
+    "mypy>=1.14.1",
+    "pdbpp>=0.10.3",
+    "pynvim>=0.5.2",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.9.4",
+]
 
 [tool.poetry.group.dev]
 optional = true
