@@ -13,17 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Install poetry
-      run: pipx install 'poetry==1.5.1'
+    - uses: actions/checkout@v4
+    - name: Install uv
+      run: pipx install 'uv==0.5.27'
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
-        cache: "poetry"
     - name: Publish package
-      env:
-        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
       run: |
-        poetry config pypi-token.pypi $PYPI_TOKEN
-        poetry publish --build
+        uv build
+        uv publish
