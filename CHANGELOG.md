@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.1](https://github.com/MaxG87/shell-interface/compare/v0.15.0...v0.15.1) (2025-02-13)
+
+
+### Continuous Integration
+
+* Use PyPI publish Github Action ([b13ae36](https://github.com/MaxG87/shell-interface/commit/b13ae3607062e1fc651cf2461de5bd03ab48fdec))
+
 ## [0.15.0](https://github.com/MaxG87/shell-interface/compare/v0.14.0...v0.15.0) (2025-02-04)
 
 ### Dependencies
