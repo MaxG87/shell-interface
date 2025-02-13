@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.2](https://github.com/MaxG87/shell-interface/compare/v0.15.1...v0.15.2) (2025-02-13)
+
+
+### Bug Fixes
+
+* **ci:** Use valid job name ([04fa985](https://github.com/MaxG87/shell-interface/commit/04fa9855666c7ff2ece3adcadc3386329d6fcd85))
+
 ## [0.15.1](https://github.com/MaxG87/shell-interface/compare/v0.15.0...v0.15.1) (2025-02-13)
 
 
