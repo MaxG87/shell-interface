@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/MaxG87/shell-interface/compare/v0.15.2...v1.0.0) (2025-02-15)
+
+
+### Bug Fixes
+
+* **ci:** Run publish jobs sequentially ([12d49f2](https://github.com/MaxG87/shell-interface/commit/12d49f2e0401809ca050be6012431cb4d9d3f2ec))
+
+
+### Documentation
+
+* Add generated README ([5cabbc6](https://github.com/MaxG87/shell-interface/commit/5cabbc63e6b0ae21c7359656a53555258cd84cd2))
+* Add some metadata URLs ([68cae4a](https://github.com/MaxG87/shell-interface/commit/68cae4a8869454db4dd6e8a21348c5cc8d4c76c5))
+
 ## [0.15.2](https://github.com/MaxG87/shell-interface/compare/v0.15.1...v0.15.2) (2025-02-13)
 
 
