@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/MaxG87/shell-interface/compare/v1.0.0...v1.0.1) (2025-07-02)
+
+
+### Dependencies
+
+* **dev:** Bump all development dependencies ([54ece2b](https://github.com/MaxG87/shell-interface/commit/54ece2b2b0beb26b0f4c844723fab41e11a65d4e))
+
 ## [1.0.0](https://github.com/MaxG87/shell-interface/compare/v0.15.2...v1.0.0) (2025-02-15)
 
 
