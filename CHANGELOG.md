@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/MaxG87/shell-interface/compare/v2.0.0...v2.1.0) (2026-05-16)
+
+
+### Features
+
+* Add flag to capture and suppress the output of "real command" ([9285670](https://github.com/MaxG87/shell-interface/commit/9285670e367d466d177c80908c75d69766499121))
+
 ## [2.0.0](https://github.com/MaxG87/shell-interface/compare/v1.0.2...v2.0.0) (2026-04-26)
 
 
